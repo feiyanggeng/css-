@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+</head>
+<style>
+        div {
+                margin: 10px
+        }
+        /* 所有后代中选定元素 */
+        .section div {
+                border: 2px solid #0f0 
+        }
+        /* section 后面所有的儿子div元素 （并不是所有后代元素） */
+        .section>div {                          
+                border: 2px solid #333
+        }
+        /* 后一个兄弟元素（后一个相邻的元素） */
+        .son1+div {
+                border: 2px dashed #f00
+        }
+        /* 后面所有的选定元素 */
+        .son1~div {
+                border-color: #00f
+        }
+</style>
+<body>
+        <div class="section">
+                <div class="son1">
+                        <div>1</div>
+                        <div>2</div>
+                </div>
+                <div class="son2">
+                        <div>1</div>
+                        <div>2</div>
+                </div>
+                <div class="son3">
+                        <div>1</div>
+                        <div>2</div>
+                </div>
+        </div>
+</body>
+</html>
