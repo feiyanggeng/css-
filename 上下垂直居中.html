@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上下垂直居中</title>
+    <style>
+        .title {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .contain-1 {
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border: 1px solid skyblue;
+        }
+        .content {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+        .contain-2 {
+            position: relative;
+            height: 200px;
+            border: 1px solid skyblue;
+        }
+        .content-2 {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin: 0 auto;
+            top: 50%;
+            transform: translateY(-50%);
+            background: red;
+        }
+        .contain-3 {
+            position: relative;
+            height: 200px;
+            border: 1px solid skyblue;
+        }
+        .content-3 {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: red;
+        }
+        .contain-4 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            border: 1px solid skyblue;
+        }
+        .content-4 {
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+        .contain-5 {
+            height: 200px;
+            text-align: center;
+            border: 1px solid skyblue;
+        }
+        .contain-5::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .content-5 {
+            display: inline-block;
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <p class="title">第一种text-align和line-height(子元素为行内元素或是inline-block)</p>
+    <div class="contain-1">
+        <div class="content"></div>
+    </div>
+    <p class="title">第二种子元素利用margin和定位布局的偏移量实现</p>
+    <div class="contain-2">
+        <div class="content-2"></div>
+    </div>
+    <p class="title">第三种定位布局的偏移量实现</p>
+    <div class="contain-3">
+        <div class="content-3"></div>
+    </div>
+    <p class="title">第四种flex布局</p>
+    <div class="contain-4">
+        <div class="content-4"></div>
+    </div>
+    <p class="title">第五种神奇的方法不知道怎么描述</p>
+    <div class="contain-5">
+        <div class="content-5"></div>
+    </div>
+</body>
+</html>
